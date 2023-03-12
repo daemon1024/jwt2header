@@ -8,12 +8,11 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 )
 
-// Say is a demo to show how to return data directly instead of proxying
-// it to the upstream.
 type JWT2HeaderPlugin struct {
 }
 
 type JWT2HeaderConfig struct {
+	//TokenRequired config checks whether a valid signature is part of JWT
 	TokenRequired bool `json:"token"`
 }
 

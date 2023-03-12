@@ -44,7 +44,20 @@ We hook onto `ext-plugin-pre-req` where we have setup `RequestFilter` to decode 
 
 Please note that this plugin does NOT validate JWT tokens. This plugin is meant to be used in conjuction with `jwt-auth` which will actually validate the JWT Signature.
 
+## Screenshot
+
+||
+|----|
+| ![](https://i.imgur.com/ViTcbXv.png)     | 
+|Figure: Screenshot contains our external plugin modifying the request and appending relevant HTTP Headers retrieved from the JWT Claims |
+
 ## TODO
 
 - Implement `ext-plugin-post-req` which validates whether `jwt-auth` was able to verify the signature and strip or reject headers if needed.
 - Make JWT location configurable, currently it expects the JWT to be part of Authorisation Header but JWT can be part of cookies and query parameters too. This implementation will be similar to how things are as part of `jwt-auth`
+
+
+## Credits
+
+- This plugin is based on [kong-jwt2header](https://docs.konghq.com/hub/yesinteractive/kong-jwt2header/) which implements the same functionality for Kong Gateway
+- https://ezioruan.github.io/2022/03/08/develop-apisix-plugin-via-go/ 
